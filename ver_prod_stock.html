@@ -72,28 +72,30 @@
         <!-- Fin de menu -->
 
         <!-- Inicio Cuerpo -->
-        <div class="bg-faded p-4 my-4">
-              <hr class="divider">
-              <h2 class="text-center text-lg text-uppercase my-0">Productos m&aacute;s <strong>Vendido</strong>  </h2>
-              <hr class="divider">  
 
 
-  						<div class="row" align="center">
-  									  
-                  <div class="col-lg-12"> 
-                    <div class="ibox float-e-margins"> 
-                      <div class="ibox-title"> </div>
-                      <!--   dddddddddddddd  -->
-                      <div class="ibox-content"> 
-                        <div> 
-                          <div id="stocked"></div>
+
+        <!-- Inicio Cuerpo -->
+
+                <div class="container">
+                    <div class="bg-faded p-4 my-4">
+                        <hr>
+                        <h2 class="text-center text-lg text-uppercase my-0">Productos m&aacute;s <strong>Vendido</strong></h2>
+                        <hr class="divider">
+                        <h2 class="text-center text-lg text-uppercase my-0"><strong>Menu</strong>
+                        </h2>
+                        <div class="row" align="center">
+                             <div class="col-md-12 mb-12 mb-md-0 " >
+                             <div class="card h-100" align="center "  style="background-color:White;">
+                                <div id="stocked"></div>
+                             </div>
+                             </div>   
                         </div>
-                      </div>
                     </div>
-                  </div>
-  					  </div>
+                </div> 
 
-        </div>
+         <!-- fin Cuerpo -->
+        
 
     <script>
 /************/
@@ -101,7 +103,7 @@
 
 			$.ajax({
             type: 'POST',
-            url: "http://localhost:8083/miappss/graficos/datos_prod_stock.php",
+            url: "http://localhost:8083/miappssFinal/graficos/datos_prod_stock.php",
             dataType: 'json',
             success: function(response) {
 
@@ -116,53 +118,53 @@
 			array2 = convertir2.split(',');
 
 
-                                                       var chart = c3.generate({
-                                                           bindto: '#stocked',
-                                                           data: {
+         var chart = c3.generate({
+             bindto: '#stocked',
+             data: {
 
-                                                               columns: [
-                                                                 array2
-                                                               ],
-                                                               type: 'bar'
-                                                           },
-                                                           axis: {
-                                                               x: {
-                                                                   label: {
-                                                                       text: '',
-                                                                       position: 'outer-center',
-                                                                   },
-                                                                   type: 'category',
-                                                                   categories: array,
-                                                                   tick: {
-                                                                       centered: true
-                                                                   }
-                                                               },
-                                                               y: {
-                                                                   label:
-                                                                   {
-                                                                       text: 'Cantidad (Ventas)',
-                                                                       position: 'outer-middle'
-                                                                   },
-                                                                   max: 10,
-                                                                   min: 0,
-                                                                   padding:
-                                                                   {
-                                                                       top: 0,
-                                                                       bottom: 0
-                                                                   }
-                                                               }
-                                                           },
-                                                           legend: {
-                                                               show: false
-                                                           }
-                                                       });
+                 columns: [
+                   array2
+                 ],
+                 type: 'bar'
+             },
+             axis: {
+                 x: {
+                     label: {
+                         text: '',
+                         position: 'outer-center',
+                     },
+                     type: 'category',
+                     categories: array,
+                     tick: {
+                         centered: true
+                     }
+                 },
+                 y: {
+                     label:
+                     {
+                         text: 'Cantidad (Ventas)',
+                         position: 'outer-middle'
+                     },
+                     max: 10,
+                     min: 0,
+                     padding:
+                     {
+                         top: 0,
+                         bottom: 0
+                     }
+                 }
+             },
+             legend: {
+                 show: false
+             }
+         });
 
-                                                       setColumnBarColors(columnColors, 'designerChart');
+         setColumnBarColors(columnColors, 'designerChart');
 
-                                                       $(window).resize(function ()
-                                                       {
-                                                           setColumnBarColors(columnColors, 'designerChart');
-                                                       });
+         $(window).resize(function ()
+         {
+             setColumnBarColors(columnColors, 'designerChart');
+         });
 
 
                 //alert(response[0]);
@@ -172,50 +174,50 @@
 /************//************//************/
             c3.generate({
                  bindto: '#stocked',
-                                                           data: {
+                     data: {
 
-                                                               columns: [
-                                                                 array2
-                                                               ],
-                                                               type: 'bar'
-                                                           },
-                                                           axis: {
-                                                               x: {
-                                                                   label: {
-                                                                       text: '',
-                                                                       position: 'outer-center',
-                                                                   },
-                                                                   type: 'category',
-                                                                   categories: array,
-                                                                   tick: {
-                                                                       centered: true
-                                                                   }
-                                                               },
-                                                               y: {
-                                                                   label:
-                                                                   {
-                                                                       text: 'Cantidad (D�as)',
-                                                                       position: 'outer-middle'
-                                                                   },
-                                                                   max: 10000,
-                                                                   min: 0,
-                                                                   padding:
-                                                                   {
-                                                                       top: 0,
-                                                                       bottom: 0
-                                                                   }
-                                                               }
-                                                           },
-                                                           legend: {
-                                                               show: false
-                                                           }
-                                                       });
+                         columns: [
+                           array2
+                         ],
+                         type: 'bar'
+                     },
+                     axis: {
+                         x: {
+                             label: {
+                                 text: '',
+                                 position: 'outer-center',
+                             },
+                             type: 'category',
+                             categories: array,
+                             tick: {
+                                 centered: true
+                             }
+                         },
+                         y: {
+                             label:
+                             {
+                                 text: 'Cantidad (D�as)',
+                                 position: 'outer-middle'
+                             },
+                             max: 100,
+                             min: 0,
+                             padding:
+                             {
+                                 top: 0,
+                                 bottom: 0
+                             }
+                         }
+                     },
+                     legend: {
+                         show: false
+                     }
+                 });
 
-                                                       setColumnBarColors(columnColors, 'designerChart');
+                 setColumnBarColors(columnColors, 'designerChart');
 
-                                                       $(window).resize(function ()
-                                                       {
-                                                           setColumnBarColors(columnColors, 'designerChart');
+                 $(window).resize(function ()
+                 {
+                     setColumnBarColors(columnColors, 'designerChart');
             });
 
             c3.generate({

@@ -1,6 +1,6 @@
 <?php
 	
-	$conexion = new mysqli("localhost","root","","tesis");
+	$conexion = new mysqli("localhost","root","","appss");
 	
 	$categorias = array();
 	$enero = array('ENERO');
